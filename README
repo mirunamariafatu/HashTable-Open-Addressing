@@ -1,0 +1,25 @@
+Student: Fatu Miruna-Maria
+
+Task -> Hashtable cu open addressing
+
+Explicatii functii:
+	htPair:
+	
+	- actualizeaza informatia din bucket
+
+	htCreate:
+	
+	- se obtine indexul din functia de hash
+	- in cazul in care bucket-ul asociat indexului este gol, htPair actualizeaza informatia
+	- daca bucket-ul nu este gol, dar cheia este aceeasi, se incrementeaza numarul de aparitii
+	- in cazul in care nimic de mai sus nu este valid, iteram in hashtable pana gasim un bucket gol
+
+	main:
+
+	- se deschide un fisier pentru a introduce datele de la stdin
+	- contorul idx determina ht_size
+	- se creeaza hashtable-ul (in acest caz, un vector de structuri)
+	- se initializeaza fiecare bucket din vectorul de structuri cu ajutorul functiei htInit
+	- se citesc sirurile de caractere din fisier
+	- fiecare string este procesat in functia htCreate
+	- cu ajutorul functiei printHt se afiseaza toate cheile si frecventa lor (appear) din bucket-urile folosite
